@@ -1,0 +1,22 @@
+{
+  "name": "ember-cli-window",
+  "version": "0.0.0",
+  "description": "Ember CLI shim for arcreative/ember-window",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arcreative/ember-cli-window"
+  },
+  "author": "Adam Robertson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arcreative/ember-cli-window/issues"
+  },
+  "homepage": "https://github.com/arcreative/ember-cli-window",
+  "keywords": [
+    "ember-addon"
+  ]
+}

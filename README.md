@@ -1,2 +1,2 @@
-ember-window
-============
+ember-cli-window
+================
