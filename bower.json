@@ -1,0 +1,25 @@
+{
+  "name": "ember-cli-window",
+  "version": "0.0.0",
+  "homepage": "https://github.com/arcreative/ember-cli-window",
+  "authors": [
+    "Adam Robertson <adam@arcreative.net>"
+  ],
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "ember-cli-window": "arcreative/ember-cli-window#initial"
+  }
+}
