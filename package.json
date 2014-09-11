@@ -4,6 +4,7 @@
   "description": "Ember CLI shim for arcreative/ember-window",
   "main": "index.js",
   "scripts": {
+    "build": "sh ./bin/build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,13 @@
   "homepage": "https://github.com/arcreative/ember-cli-window",
   "keywords": [
     "ember-addon"
-  ]
+  ],
+  "ember-addon": {
+    "main": "lib/ember-addon-main.js"
+  },
+  "devDependencies": {
+    "browserify": "^5.11.1",
+    "uglify-js": "^2.4.15",
+    "broccoli-ember-hbs-template-compiler": "^1.6.2"
+  }
 }
