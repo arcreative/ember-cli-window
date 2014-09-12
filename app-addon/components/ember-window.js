@@ -1,11 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['ember-window'],
+  classNameBindings: [':ember-window', 'styled'],
+  attributeBindings: ['tabindex'],
 
   containerSelector: null,
   parentView: null,
 
+  confirmable: true,
+  escapable: true,
+  highlightFirst: true,
+  styled: false,
+
+  tabindex: -1,
   width: 300,
   minWidth: 300,
   maxWidth: 960,
@@ -13,8 +20,26 @@ export default Ember.Component.extend({
   minHeight: 100,
   maxHeight: 600,
 
+  keyDown: function(e) {
+    if (this.get('confirmable') && e.keyCode === 13 && document.activeElement.tagName === 'INPUT') {
+      this.send('save');
+    }
+  },
+  keyUp: function(e) {
+    if (this.get('escapable') && e.keyCode === 27) {
+      this.send('close');
+    }
+  },
+
+  didInsertElement: function() {
+    this.$().focus();
+    if (this.get('highlightFirst')) {
+      this.$(':input:not(.close):first').focus();
+    }
+  },
+
   updateStyle: function() {
-    if (!this.$()) {
+    if (!this.$() || !this.get('styled')) {
       return;
     }
     this.$().css({
@@ -39,6 +64,7 @@ export default Ember.Component.extend({
   actions: {
     close: function() {
       this.close();
-    }
+    },
+    save: Ember.K
   }
 });

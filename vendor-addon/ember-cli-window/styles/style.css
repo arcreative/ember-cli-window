@@ -1,4 +1,4 @@
-.ember-window {
+.ember-window.styled {
   position: absolute;
   display: block;
   top: 30px;
