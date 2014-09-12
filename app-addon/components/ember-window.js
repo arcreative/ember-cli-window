@@ -29,7 +29,6 @@ export default Ember.Component.extend({
   }.observes('width', 'minWidth', 'maxWidth', 'height', 'minHeight', 'maxHeight').on('didInsertElement'),
 
   show: function() {
-    this.set('_parentView', this.get('parentView') || this.container.lookup('view:toplevel'));
     this.appendTo(this.get('containerSelector') || this.container.lookup('application:main').get('rootElement'));
     return this;
   },
