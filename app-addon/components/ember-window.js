@@ -1,13 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  layoutName: 'components/ember-window',
   classNameBindings: [':ember-window', 'closable'],
 
   containerSelector: null,
   parentView: null,
 
-  closable: true,
   width: 300,
   minWidth: 300,
   maxWidth: 960,
@@ -25,9 +23,9 @@ export default Ember.Component.extend({
       'max-width': this.get('maxWidth'),
       'height': this.get('height'),
       'min-height': this.get('minHeight'),
-      'max-height': this.get('maxHeight'),
-      'margin-left': -this.$().outerWidth() / 2
+      'max-height': this.get('maxHeight')
     });
+    this.$().css('margin-left', -this.$().outerWidth() / 2);
   }.observes('width', 'minWidth', 'maxWidth', 'height', 'minHeight', 'maxHeight').on('didInsertElement'),
 
   show: function() {
@@ -43,5 +41,10 @@ export default Ember.Component.extend({
     close: function() {
       this.close();
     }
+  },
+
+  //Hack since Ember.Component does not support {{yield}} when there is no parentView
+  _yield: function() {
+    return Em.View.prototype._yield.apply(this, arguments);
   }
 });
