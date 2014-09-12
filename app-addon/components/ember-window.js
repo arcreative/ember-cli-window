@@ -41,10 +41,5 @@ export default Ember.Component.extend({
     close: function() {
       this.close();
     }
-  },
-
-  //Hack since Ember.Component does not support {{yield}} when there is no parentView
-  _yield: function() {
-    return Em.View.prototype._yield.apply(this, arguments);
   }
 });
