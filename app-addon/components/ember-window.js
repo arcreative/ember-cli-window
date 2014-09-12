@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   attributeBindings: ['tabindex'],
 
   containerSelector: null,
-  parentView: null,
 
   confirmable: true,
   escapable: true,
