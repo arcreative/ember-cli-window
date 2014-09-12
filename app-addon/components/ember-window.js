@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: [':ember-window', 'closable'],
+  classNames: ['ember-window'],
 
   containerSelector: null,
   parentView: null,
