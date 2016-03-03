@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
+const { getOwner } = Ember;
+
 export default Ember.Component.extend({
   classNameBindings: [':ember-window', 'styled'],
   attributeBindings: ['tabindex'],
@@ -53,7 +55,7 @@ export default Ember.Component.extend({
   }.observes('width', 'minWidth', 'maxWidth', 'height', 'minHeight', 'maxHeight').on('didInsertElement'),
 
   show: function() {
-    this.appendTo(this.get('containerSelector') || this.container.lookup('application:main').get('rootElement'));
+    this.appendTo(this.get('containerSelector') || getOwner(this).lookup('application:main').get('rootElement'));
     return this;
   },
   close: function() {
